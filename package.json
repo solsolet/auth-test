@@ -13,5 +13,8 @@
     "jwt"
   ],
   "author": "Gemma Sellés",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1"
+  }
 }
