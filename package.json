@@ -1,0 +1,17 @@
+{
+  "name": "auth-test",
+  "version": "1.0.0",
+  "description": "Pruebas js de criptografia y JWT",
+  "main": "pruebas js de criptografia y JWT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hash",
+    "salt",
+    "moment",
+    "jwt"
+  ],
+  "author": "Gemma Sellés",
+  "license": "ISC"
+}
