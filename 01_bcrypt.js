@@ -16,7 +16,7 @@ const badPass = 'miotraContraseña';
 bcrypt.genSalt(10, (err, salt) => {
     console.log(`Salt 1: ${salt}`);
 
-    //utilitzam el Sal per a genenrar el hash
+    //utilitzam el Sal per a generar el hash
     bcrypt.hash( miPass, salt, (err, hash) => {
         if(err) console.log(err);
         else console.log(`Hash 1: ${hash}`);
