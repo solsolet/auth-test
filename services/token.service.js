@@ -13,11 +13,13 @@ const EXP_TIME = require('../config').tokenExpTmp;
 //  HEADER.PAYLOAD.VERIFY_SIGNATURE
 
 //donde:
-//  HEADER ( Objeto JASON con el algoritmo...)
-//      {
-//          alg: ...
-//  VERIFY_SIGNARURE = HMACSMA256 ( base64UrlEncode(HEAD)+"."+base64UrlEncode(PAYLOAD), SECRETO)
-//
+//  HEADER ( Objeto JSON con el algoritmo CODIFOCADO EN BASE URL64) {     
+//          "alg": "HS256",
+//          "typ": "JWT"
+//      }
+//  VERIFY_SIGNARURE = HMACSMA256 ( base64UrlEncode(HEADER)+"."+base64UrlEncode(PAYLOAD), SECRETO)
+
+/*https://jwt.io/#debugger-io?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.3uvfBzxcuVtmS5PwWF4-mQi2rizpwUTY_3SK2K8Bki8*/
 
 function creaToken( user ) {
     const payload = {
@@ -40,7 +42,7 @@ function decodificaToken( token ) {
                     status: 401,
                     message: 'El token ha caducado'
                 });
-                resolve (payload.sub );
+                resolve (payload.sub);
             }
             console.log( payload );
             resolve( payload.sub );

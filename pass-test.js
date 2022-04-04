@@ -9,6 +9,7 @@ const badPass = 'miOtraContraseña';
 const usuario = {
     _id: '123456789',
     email: 'gsl21@alu.ua.es',
+    displayName: 'Gemma Sellés',
     password: miPass,
     signUpDate: moment().unix(),
     lastLogin: moment().unix()
@@ -16,7 +17,7 @@ const usuario = {
 
 console.log(usuario);
 
-//encriptem el alssword
+//encriptem el password
 PassService.encriptaPassword( usuario.password )
     .then( hash => {
         usuario.password = hash;
@@ -43,5 +44,4 @@ PassService.encriptaPassword( usuario.password )
                 }
             })
             .catch( err => console.log(err));
-
     })
